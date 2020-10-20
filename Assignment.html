@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vratika Nagda</title>
+</head>
+<body>
+<h1>Variety :</h1>
+<script>
+function insert(){
+ var array = document.getElementById("input").value;
+ar = array.split(' ');
+console.log(ar);
+
+n = 0;
+t = 0;
+i = 0;
+k = i+1;
+count = 1;
+while( k <= ar.length )
+{  if (ar[i] === ar[k])
+    { count +=1; 
+      k += 1;
+    }
+    else{ 
+     i = k;
+     k += 1;
+     v = count%2;
+     z = v/2;
+     w = count/2; 
+     n = w-z;
+     t += n;
+     count = 1;
+     document.write("<br>No of pairs for "+ar[i]+"  : "+n+" odd socks left "+v);
+    }
+}   
+document.write("<br>Total No of Pairs "+t);
+return false;
+}
+
+</script>
+<form method="POST">
+   <input type="text" id="input">
+   <input type="submit" onclick="insert()" value="Add Number"/>
+</form>
+</body>
+</html>
